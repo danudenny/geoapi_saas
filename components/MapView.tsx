@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { Globe, Layers, MapPin, X } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
@@ -164,6 +165,7 @@ export default function EnhancedMapView({
 
         map.current = new maplibregl.Map({
             container: mapContainer.current,
+            // @ts-expect-error TypeScript expects a stricter StyleSpecification type
             style: BASEMAPS[currentBasemap].style,
             center: [0, 0],
             zoom: 2,
